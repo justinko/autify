@@ -13,7 +13,7 @@ class Api::V1::AssertionsControllerTest < ActionDispatch::IntegrationTest
   test "create a passed assertion" do
     # TODO: use WebMock to avoid real requests
     url = "nocode.autify.com"
-    text = "ai-powered"
+    text = "AI-Powered"
 
     assert_difference "::Assertion.passed.count" do
       post api_v1_assertions_url, params: { url:, text: }, as: :json
@@ -31,7 +31,7 @@ class Api::V1::AssertionsControllerTest < ActionDispatch::IntegrationTest
 
   test "create a failed assertion" do
     url = "nocode.autify.com"
-    text = "i-will-not-exist"
+    text = "ai-powered"
 
     assert_difference "::Assertion.failed.count" do
       post api_v1_assertions_url, params: { url:, text: }, as: :json
